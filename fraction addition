@@ -1,0 +1,28 @@
+#include<stdio.h> 
+struct fract 
+{ 
+        int num; 
+        int den; 
+}; 
+void input(struct fract *f1,int index) 
+{ 
+        printf("Enter numerator & denominator of %d:\n",index); 
+        scanf("%d%d",&f1->num,&f1->den); 
+} 
+void calc(struct fract *f3,struct fract f1,struct fract f2) 
+{ 
+        f3->num=(f1.num*f2.den)+(f2.num*f1.den); 
+        f3->den=f1.den*f2.den; 
+} 
+void output(struct fract f1,struct fract f2,struct fract f3) 
+{ 
+        printf("%d/%d + %d/%d = %d/%d",f1.num,f1.den,f2.num,f2.den,f3.num,f3.den); 
+} 
+int main() 
+{ 
+        struct fract f1,f2,f3; 
+         input(&f1,1); 
+         input(&f2,2); 
+         calc(&f3,f1,f2); 
+         output(f1,f2,f3); 
+}                                                                  28        28,2          All
